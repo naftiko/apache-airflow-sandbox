@@ -1,0 +1,260 @@
+specificationVersion: '0.19'
+
+aid: apache-airflow-sandbox
+type: Sandbox
+visibility: Public
+
+name: Apache Airflow API Sandbox
+description: >-
+  This is an Apache Airflow sandbox that uses OpenAPI, Microcks, Bruno, and
+  Backstage to provide a 3rd-party REST API and MCP sandbox for Apache Airflow.
+
+tags:
+  - Workflow Orchestration
+  - Data Pipelines
+  - DAGs
+
+image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
+
+created: '2026-02-26'
+modified: '2026-02-26'
+
+url: https://github.com/naftiko/apache-airflow-sandbox/blob/main/README.md
+
+apis:
+
+    - aid: apache-airflow:api
+      name: Apache Airflow API
+      description: >-
+        The Apache Airflow REST API provides programmatic access to manage and
+        monitor Airflow workflows including DAGs, DAG runs, task instances,
+        connections, pools, variables, assets, backfills, and more.
+      humanURL: https://github.com/naftiko/apache-airflow-sandbox
+      baseURL: http://localhost:8080/rest/apache-airflow-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
+      tags:
+        - Workflows
+        - DAGs
+        - Task Instances
+        - Connections
+        - Pools
+        - Variables
+        - Assets
+      properties:
+
+        - type: OpenAPI
+          url: openapi/apache-airflow-openapi
+        - type: MockRestServer
+          url: http://localhost:8080/rest/apache-airflow-api/1.0.0
+        - type: MockMCPServer
+          url: http://localhost:8080/rest/apache-airflow-api/1.0.0/sse
+        - type: BackstageApi
+          url: backstage/apache-airflow-api-sandbox-backstage.yml
+
+common:
+
+  - type: Summary
+    url: https://github.com/naftiko/apache-airflow-sandbox/
+    data:
+      numberOfPaths: 78
+      numberOfOperations: 108
+      numberOfReadOperations: 62
+      numberOfWriteOperations: 46
+      numberOfSchemas: 139
+      numberOfResponses: 0
+      numberOfParameters: 460
+      numberOfExamples: 5
+      numberOfRequestBodies: 29
+      numberOfHeaders: 0
+      tags:
+        - Asset
+        - Backfill
+        - Config
+        - Connection
+        - Dag
+        - DagParsing
+        - DagRun
+        - DagSource
+        - DagStats
+        - DagVersion
+        - DagWarning
+        - EventLog
+        - Experimental
+        - ExtraLink
+        - ImportError
+        - Job
+        - Login
+        - Monitor
+        - Plugin
+        - Pool
+        - Provider
+        - Task
+        - TaskInstance
+        - Variable
+        - Version
+        - XCom
+      operations:
+        - Bulk Connections
+        - Bulk Pools
+        - Bulk Task Instances
+        - Bulk Variables
+        - Cancel Backfill
+        - Clear Dag Run
+        - Create Asset Event
+        - Create Backfill
+        - Create Backfill Dry Run
+        - Create Default Connections
+        - Create Xcom Entry
+        - Delete Asset Queued Events
+        - Delete Connection
+        - Delete Dag
+        - Delete Dag Asset Queued Event
+        - Delete Dag Asset Queued Events
+        - Delete Dag Run
+        - Delete Pool
+        - Delete Task Instance
+        - Delete Variable
+        - Favorite Dag
+        - Get Asset
+        - Get Asset Alias
+        - Get Asset Aliases
+        - Get Asset Events
+        - Get Asset Queued Events
+        - Get Assets
+        - Get Backfill
+        - Get Config
+        - Get Config Value
+        - Get Connection
+        - Get Connections
+        - Get Dag
+        - Get Dag Asset Queued Event
+        - Get Dag Asset Queued Events
+        - Get Dag Details
+        - Get Dag Run
+        - Get Dag Runs
+        - Get Dag Source
+        - Get Dag Stats
+        - Get Dag Tags
+        - Get Dag Version
+        - Get Dag Versions
+        - Get Dags
+        - Get Event Log
+        - Get Event Logs
+        - Get External Log Url
+        - Get Extra Links
+        - Get Health
+        - Get Hitl Detail
+        - Get Hitl Details
+        - Get Import Error
+        - Get Import Errors
+        - Get Jobs
+        - Get List Dag Runs Batch
+        - Get Log
+        - Get Mapped Task Instance
+        - Get Mapped Task Instance Tries
+        - Get Mapped Task Instance Try Details
+        - Get Mapped Task Instances
+        - Get Plugins
+        - Get Pool
+        - Get Pools
+        - Get Providers
+        - Get Task
+        - Get Task Instance
+        - Get Task Instance Dependencies
+        - Get Task Instance Tries
+        - Get Task Instance Try Details
+        - Get Task Instances
+        - Get Task Instances Batch
+        - Get Tasks
+        - Get Upstream Asset Events
+        - Get Variable
+        - Get Variables
+        - Get Version
+        - Get Xcom Entries
+        - Get Xcom Entry
+        - Import Errors
+        - List Backfills
+        - List Dag Warnings
+        - Login
+        - Logout
+        - Materialize Asset
+        - Patch Connection
+        - Patch Dag
+        - Patch Dag Run
+        - Patch Dags
+        - Patch Pool
+        - Patch Task Instance
+        - Patch Task Instance Dry Run
+        - Patch Variable
+        - Pause Backfill
+        - Post Clear Task Instances
+        - Post Connection
+        - Post Pool
+        - Post Variable
+        - Reparse Dag File
+        - Test Connection
+        - Trigger Dag Run
+        - Unfavorite Dag
+        - Unpause Backfill
+        - Update Hitl Detail
+        - Update Xcom Entry
+
+  - type: GitHubHttpUrl
+    url: https://github.com/naftiko/apache-airflow-sandbox
+
+  - type: GitHubSshUrl
+    url: git@github.com:naftiko/apache-airflow-sandbox.git
+
+  - type: GitHubIssues
+    url: https://github.com/naftiko/apache-airflow-sandbox/issues
+
+  - type: GitHubDiscussions
+    url: https://github.com/orgs/naftiko/discussions
+
+  - type: Standards
+    url: https://github.com/naftiko/apache-airflow-sandbox/
+    data:
+
+      - name: APIs.json
+        description: This uses the APIs.json
+        docUrl: http://apisjson.org/
+
+      - name: OpenAPI
+        description: This uses OpenAPI to define access to all HTTP APIs.
+        docUrl: https://spec.openapis.org/oas/latest.html
+
+      - name: JSON Schema
+        description: This uses JSON Schema to define and validate all entities used.
+        docUrl: https://json-schema.org/specification
+
+      - name: Model Context Protocol
+        description: This uses MCP expressed as JSON schema to define each MCP server.
+        docUrl: https://modelcontextprotocol.io/
+
+      - name: Bruno Collections
+        description: This uses Bruno Collections to define each executable HTTP API integration.
+        docUrl: https://docs.usebruno.com/
+
+      - name: Bruno Environments
+        description: This uses Bruno Environments to store keys for each API to use in automation.
+        docUrl: https://docs.usebruno.com/secrets-management/overview
+
+      - name: API Commons
+        description: This uses an API Commons schema to define the plans and rate limits.
+        docUrl: https://apicommons.org/
+
+  - type: Services
+    url: https://github.com/naftiko/apache-airflow-sandbox/
+    data:
+
+    - aid: apache-airflow
+      name: Apache Airflow
+      description: >-
+        Apache Airflow is an open-source platform for developing, scheduling, and monitoring batch-oriented workflows, using Python to define workflows as directed acyclic graphs (DAGs).
+      docUrl: https://airflow.apache.org/docs/
+      loginUrl: https://airflow.apache.org/
+
+maintainers:
+
+  - FN: Kin Lane
+    email: kinlane@naftiko.io
